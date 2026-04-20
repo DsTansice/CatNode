@@ -38,14 +38,14 @@ jobs:
             type=raw,value=latest
             type=sha,format=short
 
-      # 编译并推送镜像
+# 编译并推送镜像
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
           context: .
           push: true
-          tags: ${{ id.meta.outputs.tags }}
-          labels: ${{ id.meta.outputs.labels }}
-          # 缓存优化，让下次构建更快
+          # 修正这里：使用 steps.step_id.outputs...
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
