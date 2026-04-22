@@ -16,6 +16,6 @@ WORKDIR /app
 COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app .
 
-EXPOSE 443
+EXPOSE 3000
 ENV NAME="Komari"
 CMD [ "node", "index.js" ]
