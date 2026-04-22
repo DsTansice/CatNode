@@ -32,7 +32,7 @@ COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app .
 
 # 暴露端口
-EXPOSE 3000
+EXPOSE 443
 
 # 环境变量默认值
 ENV NAME="Komari"
