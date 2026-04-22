@@ -35,6 +35,6 @@ COPY --from=builder /app .
 EXPOSE 3000
 
 # 环境变量默认值
-ENV NAME="Komari-Agent-NodeJS"
+ENV NAME="Komari"
 
 CMD [ "node", "index.js" ]
